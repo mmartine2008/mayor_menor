@@ -13,6 +13,14 @@
 
         private $cartas = [];
 
+        public function vacio() {
+            return count($this->cartas) == 0;
+        }
+
+        public function totalCartas() {
+            return count($this->cartas);
+        }
+
         function __construct()
         {
             for($i=1; $i<=12; $i++) {
@@ -114,6 +122,12 @@
                 $this->separar_y_unir();
             }
 
+        }
+
+        public function sacarCarta() {
+
+            $carta = array_pop($this->cartas);
+            return $carta;
         }
 
     }
